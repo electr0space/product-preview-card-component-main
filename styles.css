@@ -1,0 +1,112 @@
+:root {
+    --primary-green: hsl(158, 36%, 37%); 
+    --bg-color: hsl(30, 38%, 92%);
+    --txt-header: hsl(212, 21%, 14%);
+    --txt-p: hsl(228, 12%, 48%);
+    --bg-card: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
+    max-width: 600px;
+}
+
+/* Images styling */
+
+.desktop-img {
+    display: block;
+    width: 100%;
+    border-radius: 10px 0 0 10px;
+}
+
+.mobile-img {
+    display: none;
+}
+
+/* Text section */
+
+.description {
+    padding: 32px;
+    background-color: var(--bg-card);
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.subheader {
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    display: block;
+}
+
+p {
+    line-height: 22px;
+}
+
+.subheader, p, .add-btn {
+    font-size: 14px;
+}
+
+.subheader, p, .old-price {
+    color: var(--txt-p);
+}
+
+.subheader, p, .old-price, .add-btn {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, .new-price {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+}
+
+h1 {
+    color: var(--txt-header);
+    line-height: 33px;
+}
+
+.new-price {
+    font-size: 32px;
+    color: var(--primary-green);
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.old-price {
+    text-decoration: line-through;
+    margin-right: 40px;
+}
+
+.add-btn {
+    display: block;
+    width: 100%;
+    background-color: var(--primary-green);
+    color: var(--bg-card);
+    border: none;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.cart-img {
+    margin-right: 10px;
+}
