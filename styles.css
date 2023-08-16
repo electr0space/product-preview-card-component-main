@@ -18,6 +18,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .container {
@@ -88,13 +89,12 @@ h1 {
 
 .price {
     display: flex;
-    justify-content: space-between;
     margin: 20px 0;
 }
 
 .old-price {
     text-decoration: line-through;
-    margin-right: 40px;
+    margin-left: 40px;
 }
 
 .add-btn {
@@ -105,8 +105,103 @@ h1 {
     border: none;
     height: 50px;
     border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.4s;
+}
+
+.add-btn:hover {
+    transform: scale(1.1);
 }
 
 .cart-img {
     margin-right: 10px;
+}
+
+/* Confirmation pop-up */
+#confirmation-popup {
+    width: auto;
+    height: auto;
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    box-shadow: 0 0 30px rgba(251, 204, 157, 0.8);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.hidden-content.fade {
+    animation-name: fadeIn;
+    animation-duration: 3s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+h2 {
+    font-family: 'Fraunces', serif;
+    color: var(--txt-header);
+    margin-bottom: 10px;
+}
+
+.hidden-content {
+    display: none;
+}
+
+.hidden-content.add-btn {
+    display: inline-block;
+    
+}
+
+@media only screen and (max-width: 745px) {
+
+    body {
+        height: auto;
+    }
+
+    .container {
+        width: 100%;
+        margin: 16px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr max-content;
+    }
+
+    .subheader {
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .desktop-img {
+        display: none;
+    }
+
+    .mobile-img {
+        display: block;
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .description {
+        border-radius: 0 0 10px 10px;
+    }
 }
